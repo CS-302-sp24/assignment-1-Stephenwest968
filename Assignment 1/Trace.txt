@@ -1,0 +1,104 @@
+java DiningPhilosophers 2 10 1 1 0 
+    Number of philosophers: 2
+    Number of cycles: 10
+    Max thinking time: 1
+    Max eating time: 1
+    Handed indicator: 0
+    Philosopher Thread[#30,Thread-1,5,main]has thought for 0 units
+    Philosopher Thread[#29,Thread-0,5,main]has thought for 0 units
+    Philosopher Thread[#30,Thread-1,5,main]wants right chopstick
+    Philosopher Thread[#29,Thread-0,5,main]wants right chopstick
+    Philosopher Thread[#30,Thread-1,5,main]wants left chopstick
+    Philosopher Thread[#29,Thread-0,5,main]wants left chopstick
+
+    NOTES: Even at a low cycle count, they entered deadlock when wanting chopsticks
+
+
+java DiningPhilosophers 2 10 1 1 1
+    Number of philosophers: 2
+    Number of cycles: 10
+    Max thinking time: 1
+    Max eating time: 1
+    Handed indicator: 1
+    Philosopher Thread[#29,Thread-0,5,main] has thought 10 times
+    PhilosopherThread[#30,Thread-1,5,main]has realease left chopstick
+    Philosopher Thread[#29,Thread-0,5,main]has thought for 0 units
+    Philosopher Thread[#30,Thread-1,5,main] has thought 10 times
+    Philosopher Thread[#29,Thread-0,5,main]wants right chopstick
+    Philosopher Thread[#30,Thread-1,5,main]has thought for 0 units
+    Philosopher Thread[#29,Thread-0,5,main]wants left chopstick
+    Philosopher Thread[#30,Thread-1,5,main]wants left chopstick
+    PhilosopherThread[#29,Thread-0,5,main]has eaten for 0units
+    PhilosopherThread[#29,Thread-0,5,main]has realease left chopstick
+    PhilosopherThread[#29,Thread-0,5,main]has realease right chopstick
+    Philosopher Thread[#30,Thread-1,5,main]wants right chopstick
+    PhilosopherThread[#30,Thread-1,5,main]has eaten for 0units
+    PhilosopherThread[#30,Thread-1,5,main]has realease right chopstick
+    PhilosopherThread[#30,Thread-1,5,main]has realease left chopstick
+    
+    NOTES: When changing to alternating hands, deadlock is resolved
+
+
+java DiningPhilosophers 5 0 1 1 0
+    Number of philosophers: 5
+    Number of cycles: 0
+    Max thinking time: 10
+    Max eating time: 10
+    Handed indicator: 0
+    hilosopher Thread[#30,Thread-1,5,main] has thought 10 times
+    Philosopher Thread[#32,Thread-3,5,main] has thought 10 times
+    Philosopher Thread[#29,Thread-0,5,main] has thought 10 times
+    Philosopher Thread[#31,Thread-2,5,main] has thought 10 times
+    Philosopher Thread[#33,Thread-4,5,main] has thought 10 times
+    Philosopher Thread[#30,Thread-1,5,main]has thought for 0 units
+    Philosopher Thread[#29,Thread-0,5,main]has thought for 0 units
+    Philosopher Thread[#33,Thread-4,5,main]has thought for 0 units
+    Philosopher Thread[#32,Thread-3,5,main]has thought for 0 units
+    Philosopher Thread[#31,Thread-2,5,main]has thought for 0 units
+    Philosopher Thread[#33,Thread-4,5,main]wants right chopstick
+    Philosopher Thread[#31,Thread-2,5,main]wants right chopstick
+    Philosopher Thread[#30,Thread-1,5,main]wants right chopstick
+    Philosopher Thread[#29,Thread-0,5,main]wants right chopstick
+    Philosopher Thread[#32,Thread-3,5,main]wants right chopstick
+    Philosopher Thread[#33,Thread-4,5,main]wants left chopstick
+    Philosopher Thread[#31,Thread-2,5,main]wants left chopstick
+    Philosopher Thread[#30,Thread-1,5,main]wants left chopstick
+    Philosopher Thread[#29,Thread-0,5,main]wants left chopstick
+    Philosopher Thread[#32,Thread-3,5,main]wants left chopstick
+
+    NOTES: Used minimum thinking time to increase possibility of a deadlock, happened after all 5 wanted to eat at the same time
+
+
+java DiningPhilosophers 5 0 10000 10000 0
+    Number of philosophers: 5
+    Number of cycles: 0
+    Max thinking time: 10000
+    Max eating time: 10000
+    Handed indicator: 0
+    Philosopher Thread[#32,Thread-3,5,main]wants right chopstick
+    PhilosopherThread[#30,Thread-1,5,main]has eaten for 3670units
+    PhilosopherThread[#30,Thread-1,5,main]has realease left chopstick
+    PhilosopherThread[#30,Thread-1,5,main]has realease right chopstick
+    Philosopher Thread[#30,Thread-1,5,main] has thought 50 times
+    PhilosopherThread[#33,Thread-4,5,main]has eaten for 4466units
+    PhilosopherThread[#33,Thread-4,5,main]has realease left chopstick
+    Philosopher Thread[#32,Thread-3,5,main]wants left chopstick
+    PhilosopherThread[#33,Thread-4,5,main]has realease right chopstick
+    Philosopher Thread[#33,Thread-4,5,main] has thought 50 times
+    Philosopher Thread[#33,Thread-4,5,main]has thought for 1305 units
+    Philosopher Thread[#33,Thread-4,5,main]wants right chopstick
+    Philosopher Thread[#33,Thread-4,5,main]wants left chopstick
+    PhilosopherThread[#31,Thread-2,5,main]has eaten for 3408units
+    PhilosopherThread[#31,Thread-2,5,main]has realease left chopstick
+    PhilosopherThread[#31,Thread-2,5,main]has realease right chopstick
+    Philosopher Thread[#31,Thread-2,5,main] has thought 60 times
+    Philosopher Thread[#31,Thread-2,5,main]has thought for 1445 units
+    Philosopher Thread[#31,Thread-2,5,main]wants right chopstick
+    PhilosopherThread[#32,Thread-3,5,main]has eaten for 1635units
+    PhilosopherThread[#32,Thread-3,5,main]has realease left chopstick
+    Philosopher Thread[#31,Thread-2,5,main]wants left chopstick
+    PhilosopherThread[#32,Thread-3,5,main]has realease right chopstick
+    Philosopher Thread[#32,Thread-3,5,main] has thought 60 times
+
+    NOTES: With large thinking and eating time, there is a lot of jumping, specifically when one person gets done eating
+    another is almost always ready to pick up the chopsticks and start eating
